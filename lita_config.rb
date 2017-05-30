@@ -1,3 +1,5 @@
+require_relative "lita-way-to-go/lib/lita/handlers/way_to_go.rb"
+
 Lita.configure do |config|
   # The name your robot will use.
   config.robot.name = "Lita"

@@ -8,8 +8,10 @@ module Lita
       route(/add\s+(\d+)\s+(\d+)/, :add, command: true, help: {"add N1 N2" => "Calculates N1 + N2"})
       route(/^say\s.*/,:say, command:false, help:{"dummy-command: say TEXT" => "replies with text" })
       route(/^[Hh]ow.*|^[Ww]here.*/,:dir, command:false, help:{"dummy-command: ASK FOR DIRECTIONS" => "returns useful advice"})   
-      route(/get .*/, :get, command:false, help:{"dummy-command: get VALUE"=>"returns corresponding value if available"})
+      route(/get (.*)/, :get, command:false, help:{"dummy-command: get VALUE"=>"returns corresponding value if available"})
 
+
+      # All the callbacks
 
       # All the callbacks
       def where(response)
@@ -52,11 +54,11 @@ module Lita
       end
 
       def get(response) 
-        @h = { "answer" => "42", "a" => "2"}        
-        if @h.key?(response.matches[0][4]) == false  
-          response.reply("#{response.matches[0][4]} is not in the database")
+        @h = { "answer" => "42", "a" => "2"}       
+        if @h.key?(response.matches[0][0]) == false  
+          response.reply("#{response.matches[0][0]} is not in the database")
         else
-        response.reply(@h[response.matches[0][4..10]])
+        response.reply(@h[response.matches[0][0]])
         end
       end
 
