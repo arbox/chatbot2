@@ -19,6 +19,11 @@ module Lita
       # Anfragegruppe
       def get_points(request)
         
+      end
+      
+      # Anfragegruppe
+      def get_points(request)
+        
         tokens = request.split(' ')
         
 
