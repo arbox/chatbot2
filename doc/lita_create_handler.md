@@ -8,9 +8,9 @@ Siehe _lita_installation.md_
 
 Um lita-way-to-go zu starten, muss das Repository chatbots2 geklont werden:   
 `git clone https://github.com/arbox/chatbot2.git`  
-Dann in das Verzeichnis des Handlers wechseln und lita starten, z.B.:
+Dann in das Verzeichnis des gerade geklonten Repositories wechseln und lita starten, z.B.:
 ```
-cd ~/chatbot2/lita-way-to-go/
+cd ~/chatbot2/
 lita start
 ```
 Es erscheint ein Prompt `>`. Mit `lita help` können verfügbare Befehle eingesehen werden (bspw. _lita way to LOCATION_).  
