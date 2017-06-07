@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="campus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nodes"/>
+        <xs:element ref="edges"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nodes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="node"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="node">
+    <xs:complexType>
+      <xs:attribute name="desc" use="required"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+      <xs:attribute name="type" use="required" type="nodeType"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="nodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="floor"/>
+      <xs:enumeration value="door"/>
+      <xs:enumeration value="elevator"/>
+      <xs:enumeration value="stairs"/>
+      <xs:enumeration value="library"/>
+      <xs:enumeration value="mensa"/>
+      <xs:enumeration value="lecturehall"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="edges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="edge"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="edge">
+    <xs:complexType>
+      <xs:attribute name="from" use="required" type="xs:NCName"/>
+      <xs:attribute name="to" use="required" type="xs:NCName"/>
+      <xs:attribute name="weight" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
