@@ -1,4 +1,4 @@
-require_relative 'anfragen'
+require_relative 'src/anfragen'
 module Lita
   module Handlers
     class WayToGo < Handler
