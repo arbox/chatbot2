@@ -39,10 +39,16 @@ module Lita
       # Anweisungsgruppe
       def get_answer (pathstructure)
         wegbeschreibung = ""
+        
+        pathstructure.each do |step|
+        	##get step.target
+        	##if step.target = treppenhaus
+        		## wegbeschreibung += "Gehen Sie die Treppe hoch"
+        end
 
         return wegbeschreibung
       end
-      
+
 
       Lita.register_handler(self)
     end
