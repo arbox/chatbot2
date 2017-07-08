@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 
 gem "lita"
+gem "rgl"
+gem "nokogiri"
 
 # Uncomment to use the HipChat adapter
 # gem "lita-hipchat"
