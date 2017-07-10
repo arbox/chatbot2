@@ -1,0 +1,42 @@
+1. Mögliche Formulierungen für Routen
+2. Wie verbindet man mehrere Knoten?
+3. Wie sagt man ob Aufzug oder Treppe etc. erforderlich?
+
+
+Frage:
+    - Flur A0 nach Flur B3?
+    
+    Standort 
+    1.<node name="a0" type="floor" desc="Erdgeschoss des A-Gebäudes"/>
+    Wege        
+        <edge from="a0" to="ae1" weight="1"/> <!-- Gehen Sie zum Aufzug des A-Gebäudes -->
+	    <edge from="a0" to="as1" weight="1"/> <!-- Gehen Sie zum Treppenhaus des A-Gebäudes -->
+        <edge from="a0" to="b0" weight="1"/> <!-- Gehen Sie zum Erdgeschoss des B-Gebäudes -->
+    
+    Mögliche Standorte
+    2.  <node name="ae1" type="elevator" desc="Aufzug"/> 
+	    <node name="as1" type="stairs" desc="Treppenhaus"/> 
+        <node name="b0" type="floor" desc="Erdgeschoss des B-Gebäudes"/>
+        <!--kommt man aus Aufzug wieder raus?!?-->
+        <!--kommt man aus Treppenhaus wieder raus?!?-->
+    Wege
+        <edge from="ae1" to="a3" weight="1"/> <!-- Nehmen Sie den Aufzug zum dritten Stock -->
+	    <edge from="as1" to="a3" weight="1"/> <!-- Nehmen Sie die Treppe zum dritten Stock -->
+        <edge from="b0" to="be1" weight="1"/> <!-- Gehen Sie zum Aufzug des B-Gebäudes -->
+        <edge from="b0" to="bs1" weight="1"/> <!-- Gehen Sie zum Treppenhaus des B-Gebäudes -->
+        <!--Kanten aus Treppenhaus und Aufzug derzeit nicht existent -->
+    Mögliche Standorte
+    3.  <node name="a3" type="floor" desc="dritten Stock des A-Gebäudes"/>
+        <node name="be1" type="elevator" desc="Aufzug"/>
+		<node name="bs1" type="stairs" desc="Haupttreppenhaus"/>
+        <!-- zwecks Vereinfachung ohne Treppenhaus Cafeteria oder Seitentreppenhaus -->
+    Wege
+        <edge from="a3" to="b3" weight="1"/> <!-- Gehen Sie zum dritten Stock des B-Gebäudes. Sie sind am Ziel angekommen!!! -->
+        <edge from="be1" to="b3" weight="1"/> <!-- Nehmen Sie den Aufzug zum dritten Stock. Sie sind am Ziel angekommen!!!-->
+	    <edge from="bs1" to="b3" weight="1"/> <!-- Nehmen Sie die Treppe zum dritten Stock. Sie sind am Ziel angekommen!!!-->
+    Mögliche Standorte
+    4.  <node name="b3" type="floor" desc="dritten Stock des B-Gebäudes"/>
+
+    SIE HABEN IHR ZIEL ERREICHT !!!
+        
+    

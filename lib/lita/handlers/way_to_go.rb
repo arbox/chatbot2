@@ -40,10 +40,9 @@ module Lita
       def get_answer (pathstructure)
         wegbeschreibung = ""
 
-
         return wegbeschreibung
       end
-
+      
 
       Lita.register_handler(self)
     end
