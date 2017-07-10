@@ -1,6 +1,6 @@
 def get_start_stop (input)
 
-  regex_tester = /(Hörsaal \d+|[Tt]reppenhaus|[A-Za-züäö]*[Ee]ingang des \w+-Gebäudes|\w*[Ee]ingang des Mensa|Aufzug|Audimax|Bibliothek| \w* Stock des \w+-Gebäudes| \w*geschoss des \w+-Gebäudes)/
+  regex_tester = /(Hörsaal \d+|[Tt]reppenhaus| [A-Za-züäö ]+[Ee]ingang des \w+-Gebäudes|Eingang des \w+-Gebäudes|Eingang des Mensa-Gebäudes| [A-Za-züäö ]+eingang des Mensa-Gebäudes|Eingangsbereich der Mensa|Aufzug|Audimax|Bibliothek| \w* Stock des \w+-Gebäudes| \w*geschoss des \w+-Gebäudes)/
   result = input.scan(/.*#{regex_tester}.*#{regex_tester}.*/)
 
   if result.empty? == false

@@ -4,20 +4,19 @@ require "test/unit"
 class TestAnfragen < Test::Unit::TestCase
 
   def test_anfragen
-    # assert_equal( ["Bib","Mensa"], get_start_stop("Ich will von der Bib zur Mensa") )
-    #
-    # assert_equal( ["Bib","Mensa"], get_start_stop("Wie komme ich von der Bib zur Mensa.") )
-    #
-    # assert_equal( ["Mensa","Bib"], get_start_stop("Wie komme ich von der Mensa zur Bib.") )
-    #
-    # assert_equal( ["A337","B329"], get_start_stop("Zeig mir den Weg von A337 zum Raum B329.") )
-
-    #assert_equal( ["A337","DM-Gebäude"], get_start_stop("Zeig mir den Weg von A337 zum DM-Gebäude.") )
 
     # will not match, because the answer is a random entry from a list
     #assert_equal( "Hi", get_start_stop("Hallo ") )
 
     assert_equal( ["Hörsaal 1","Audimax"], get_start_stop("Ich will vom Hörsaal 1 zum Audimax") )
+
+    assert_equal( ["zweiten Stock des B-Gebäudes","vierten Stock des B-Gebäudes"], get_start_stop("Wie komme ich vom zweiten Stock des B-Gebäudes in den vierten Stock des B-Gebäudes") )
+
+    assert_equal( ["Eingangsbereich der Mensa","Erdgeschoss des N-Gebäudes"], get_start_stop("Ich will vom Eingangsbereich der Mensa zum Erdgeschoss des N-Gebäudes") )
+
+    assert_equal( ["Haupteingang des Mensa-Gebäudes","Hintereingang des N-Gebäudes"], get_start_stop("Ich will vom Haupteingang des Mensa-Gebäudes zum Hintereingang des N-Gebäudes") )
+
+    assert_equal( ["Haupteingang des N-Gebäudes","Eingang des V-Gebäudes"], get_start_stop("Ich will vom Haupteingang des N-Gebäudes zum Eingang des V-Gebäudes") )
   end
 
 end
