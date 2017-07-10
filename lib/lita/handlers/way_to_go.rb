@@ -1,6 +1,6 @@
 # encoding: utf-8
-require_relative 'anfragen'
-require_relative 'graph'
+require_relative 'src/anfragen'
+require_relative 'src/graph'
 
 module Lita
   module Handlers
@@ -57,7 +57,7 @@ module Lita
         wegbeschreibung = ""
         if pathstructure.respond_to? 'each'
           pathstructure.each { |node|
-            wegbeschreibung << node.to_s
+            wegbeschreibung << node.to_s + "\n"
           }
         end
         return wegbeschreibung

@@ -1,7 +1,4 @@
 # encoding: utf-8
-
-puts $LOAD_PATH
-
 require 'nokogiri'
 require 'rgl/adjacency'
 require 'rgl/traversal'
@@ -36,7 +33,7 @@ class Graph
   
   def read_from_file(filename='campusgraph.xml')
     # Parse the XML file.
-    filepath = File.join(File.dirname(__FILE__), '..', '..', '..', 'data', filename)
+    filepath = File.join(File.dirname(__FILE__), '..', '..', '..', '..', 'data', filename)
     g = Nokogiri::XML(File.open(filepath))
     xml_nodes = g.css("nodes node")
     xml_edges = g.css("edges edge")
